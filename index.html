@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Student Form</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            form {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                /* align-items: center; */
+            }
+            input {
+                width: 100%;
+            }
+            input[type="submit"] {
+                padding: 10px;
+            }
+            input:invalid {
+                border: 2px solid red;
+            }
+            .success {
+                display: none;
+                padding: 20px;
+                background-color: lightgreen;
+                margin: 10px;
+            }
+            .active {
+                display: block !important;
+            }
+        </style>
+
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <form action="/">
+            <div class="success">Success</div>
+            <label for="name">Name</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                maxlength="30"
+                pattern="[a-zA-Z]*"
+                data-error-message="Name should contain only alphabets"
+                required
+            />
+            <br />
+            <label for="number">Number</label>
+            <input
+                type="number"
+                id="number"
+                name="number"
+                min="1000000000"
+                min="9999999999"
+                data-error-message="Invalid phone number"
+                required
+            />
+            <br />
+            <label for="reg-no">Register Number</label>
+            <input
+                type="text"
+                id="reg-no"
+                name="reg-no"
+                pattern="[a-zA-Z0-9]+"
+                data-error-message="Register Number should only contain numbers and alphabets"
+                required
+            />
+            <br />
+            <label for="dob">DOB</label>
+            <input type="date" id="dob" name="dob" required />
+            <br />
+            <label for="program">Program</label>
+            <input type="text" id="program" name="program" required />
+            <br />
+            <label for="email">Email ID</label>
+            <input type="email" id="email" name="email" required />
+            <br />
+            <input type="submit" value="Submit" />
+        </form>
+    </body>
+</html>
